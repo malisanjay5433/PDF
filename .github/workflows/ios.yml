@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Select xcode
-        run : sudo xcode-select -switch /Applications/Xcode_13.4.app
+        run : sudo xcode-select -switch /Applications/Xcode.app
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set Default Scheme
