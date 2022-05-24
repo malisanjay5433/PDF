@@ -8,10 +8,12 @@ on:
 
 jobs:
   build:
-    name: Build and Test default scheme using any available iPhone simulator
+    name: Build and Test
     runs-on: macos-latest
 
     steps:
+      - name: Select xcode
+        run : sudo xcode-select -switch /Applications/Xcode_13.4.app
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set Default Scheme
