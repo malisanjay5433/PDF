@@ -13,11 +13,7 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        load(urlString ?? "")
-//        webView.navigationDelegate = self
-      
-        // Do any additional setup after loading the view.
-        
+        load(urlString ?? "")        
     }
     func load(_ urlString: String) {
         if let url = URL(string: urlString) {
