@@ -13,11 +13,7 @@ class WebViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        load(urlString ?? "")
-//        webView.navigationDelegate = self
-      
-        // Do any additional setup after loading the view.
-        
+        load(urlString ?? "")        
     }
     func load(_ urlString: String) {
         if let url = URL(string: urlString) {
@@ -54,20 +50,6 @@ class WebViewController: UIViewController {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         debugPrint(error.localizedDescription)
     }
-//    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-//        // TODO
-//        let url = navigationAction.request.url?.absoluteString
-//        if url?.contains("CPID")  == true{
-//            print("Matched URL : \(url ?? "")")
-//            webView.alpha = 0
-//            let CPID : [String] = url?.components(separatedBy: "=") ?? []
-//            print("We have got \(CPID[1]), lets call payment confirmation")
-//            investmentComplete(cPaymentID:  CPID[1])
-//        }
-//        print("web url : \(url ?? "")")
-//        decisionHandler(.allow)
-//    }
-    
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         // TODO
         decisionHandler(.allow)
